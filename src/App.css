@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.word {
+  height: 30px;
+}
+
+.wordLetter {
+  float: left;
+  margin-left: 5px;
+}
+
+.firstRow {
+  height: 30px;
+}
+
+.letter {
+  width: 20px;
+  float: left;
+  background-color: lightgrey;
+  margin-right: 5px;
+  text-align: center;
+}
