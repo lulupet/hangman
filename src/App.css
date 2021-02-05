@@ -37,8 +37,40 @@
   }
 }
 
+.hangman {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 50px;
+}
+
 .word {
   height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  font-size: 50px;
+}
+
+.errors {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 80px;
+}
+
+.restartGame {
+  width: 200px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 30px;
+  background-color: red;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.restartGame:hover {
+  background-color: salmon;
+  cursor: pointer;
 }
 
 .wordLetter {
@@ -48,12 +80,39 @@
 
 .firstRow {
   height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.secondRow {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
 .letter {
-  width: 20px;
+  width: 50px;
   float: left;
-  background-color: lightgrey;
+  background-color: lightblue;
   margin-right: 5px;
   text-align: center;
+  border-radius: 5px;
+}
+
+.letter:hover {
+  background-color: #0080FF;
+  cursor: pointer;
+}
+
+.wonMessage {
+  width: 200px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 30px;
+  background-color: green;
+  text-align: center;
+  border-radius: 5px;
 }

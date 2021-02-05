@@ -38,12 +38,13 @@ class App extends Component {
     const won = lettersWord.every(element => lettersTried.includes(element))
     return (
       <div className='hangman'>
-        <div className='errors'>{errors}</div>
         <div className='word'>
           {word.split('').map((letter, index) => (
               <div className='wordLetter'>{lettersTried.includes(letter) ? letter : '_'}</div>
             ))}
         </div>
+        <div className='errors'>{errors}</div>
+        <div className='restartGame' onClick={() => this.onRestart()}>Restart game</div>
         <div className='keyboard'>
           <div className='firstRow'>
             {LETTERS_1.map((letter, index) => (
@@ -57,7 +58,6 @@ class App extends Component {
           </div>
         </div>
         {won && <div className='wonMessage'>You won!</div>}
-        <div className='restartGame' onClick={() => this.onRestart()}>Restart game</div>
       </div>
     )
   }
