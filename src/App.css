@@ -107,6 +107,10 @@
   cursor: pointer;
 }
 
+.alreadyTried {
+  background-color: black;
+}
+
 .wonMessage {
   width: 200px;
   margin: auto;

@@ -16,16 +16,28 @@ class App extends Component {
     return words[Math.floor(Math.random() * words.length)]
   }
 
+  letterClassNames(letter) {
+    const { lettersTried } = this.state
+
+    if (lettersTried.includes(letter)) {
+      return 'letter alreadyTried'
+    } else {
+      return 'letter'
+    }
+  }
+
   onClick = letter => {
     const { word, errors, lettersTried } = this.state
 
-    if (!word.split('').includes(letter)) {
-      const newErrors = errors + 1
-      this.setState({ errors: newErrors })
+    if (!lettersTried.includes(letter)) {
+      if (!word.split('').includes(letter)) {
+        const newErrors = errors + 1
+        this.setState({ errors: newErrors })
+      }
+      const newLettersTried = lettersTried
+      newLettersTried.push(letter)
+      this.setState({ lettersTried: newLettersTried })
     }
-    const newLettersTried = lettersTried
-    newLettersTried.push(letter)
-    this.setState({ lettersTried: newLettersTried })
   }
 
   onRestart() {
@@ -48,12 +60,12 @@ class App extends Component {
         <div className='keyboard'>
           <div className='firstRow'>
             {LETTERS_1.map((letter, index) => (
-              <div className='letter' onClick={() => this.onClick(letter)}>{letter}</div>
+              <div className={this.letterClassNames(letter)} onClick={() => this.onClick(letter)}>{letter}</div>
             ))}
           </div>
           <div className='secondRow'>
             {LETTERS_2.map((letter, index) => (
-              <div className='letter' onClick={() => this.onClick(letter)}>{letter}</div>
+              <div className={this.letterClassNames(letter)} onClick={() => this.onClick(letter)}>{letter}</div>
             ))}
           </div>
         </div>
